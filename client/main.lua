@@ -152,7 +152,6 @@ RegisterNetEvent('qb-menu:client:closeMenu', closeMenu)
 RegisterNetEvent('qb-menu:closeMenu', closeMenu)
 
 RegisterNUICallback('onClick', onClick)
-RegisterNUICallback('menuCheckCallback', menuCheckCallback)
 
 exports('openMenu', openMenu)
 exports('closeMenu', closeMenu)
