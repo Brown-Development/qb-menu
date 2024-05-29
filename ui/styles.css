@@ -1,0 +1,125 @@
+body {
+    overflow: hidden !important;
+    background-color: transparent !important;
+}
+
+:root {
+    --primary: rgb(245, 245, 245);
+    --secondary: black;
+    --alternative: rgba(255, 255, 255, 0.89);
+    --disabled: rgb(163, 163, 163);
+}
+
+@keyframes fadein {
+    0% { opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeout {
+    0% { opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    background-color: transparent !important;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 350px;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+    justify-content: top;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#menu::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent !important;
+}
+
+#menu::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+}
+
+.option {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    justify-content: top;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    border-width: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 5px white;
+
+}
+
+.option:hover {
+    background-color: var(--alternative);
+}
+
+.header {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--secondary);
+    justify-content: top;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 95%;
+    height: auto;
+    border-width: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px black;
+    text-shadow: 1px 1px 5px white;
+
+}
+
+.option h3, .option p {
+    margin: 0;
+    padding: 5px 0; 
+}
+
+.header h3, .header p {
+    margin: 0;
+    padding: 0px 0; 
+}
+
+.option:focus,
+.header:focus {
+    outline: none;
+}
+
+
+.optionHeader{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}

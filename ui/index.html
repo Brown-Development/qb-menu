@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/23e251dfd6.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js" integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg=" crossorigin="anonymous"></script>
+    <script type="importmap">
+        { "imports": {
+            "vue":               "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.prod.js",
+            "vue-router":        "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js",
+            "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.4.5/lib/esm/index.js"
+        } }
+    </script>
+    <script src="../config/config.js"></script>
+    <script type="module" src="./client.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <title>QB Menu Redesigned By Brown Devleopment</title>
+</head>
+<body>
+    <div id="app">
+        <div id="menu"
+            :style ="{animation: menu.isOpen ? 'fadein 0.5s forwards' : 'fadeout 0.5s forwards'}">
+            <button @click="headerClicked()" v-if="!menu.header.hidden" class="header"
+            :style="{ 
+                backgroundColor: menu.header.disabled || menu.header.hidden ? 'var(--disabled)' : 'var(--primary)', 
+                cursor: menu.header.disabled || menu.header.hidden ? 'not-allowed' : 'pointer',
+            }">
+                <div class="optionHeader">
+                    <h3>{{ menu.header.header }}</h3>
+                    <i v-if="menu.header.icon" :class="menu.header.icon"></i>
+                </div>
+                <p v-if="menu.header.txt">{{ menu.header.txt }}</p>
+            </button>
+            <button @click="optionClicked(index)" v-for="(option, index) in menu.options" :key="index" class="option"
+            :style="{ 
+                backgroundColor: option.disabled || option.hidden ? 'var(--disabled)' : 'var(--primary)', 
+                cursor: option.disabled || option.hidden ? 'not-allowed' : 'pointer',
+            }">
+            <div class="optionHeader">
+                <h3>{{ option.header }}</h3>
+                <i v-if="option.icon" :class="option.icon"></i>
+            </div>
+            <p v-if="option.txt">{{ option.txt }}</p>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
