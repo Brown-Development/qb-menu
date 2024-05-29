@@ -4,8 +4,6 @@ RegisterNetEvent('QBCore:Client:UpdateObject', function() QBCore = exports['qb-c
 local theseOptions = nil 
 local thisHeader = nil
 local focus = false 
-local menuCheck = false  
-
 
 local function toggleControls(toggle)
     focus = toggle 
